@@ -19,7 +19,7 @@ const replaceTemplate = (template, product) => {
   output = output.replace(/{%QUANTITY%}/g, product.quantity);
   output = output.replace(/{%DESCRIPTION%}/g, product.description);
   output = output.replace(/{%ID%}/g, product.id);
-  if (!product.organic) output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic"); // not-organic the class name in css to not show the organic part
+  if (!product.organic) output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic"); // 'not-organic' the class name in css to not show the organic part
   return output;
 };
 
@@ -36,6 +36,7 @@ const server = http.createServer((req, res) => {
     const product = dataObj[query.id];
     const output = replaceTemplate(templateProduct, product);
     res.end(output);
+    // to use slugs instead of query
     */ else if (pathname.startsWith("/product")) {
     const slug = pathname.split("/")[2];
     const product = dataObj.find((n) => n.slug === slug);
