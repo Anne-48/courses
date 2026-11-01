@@ -1,0 +1,27 @@
+{
+  "name": "2-how-node-works",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "event-loop": "nodemon event-loop.js",
+    "events": "nodemon events.js",
+    "modules": "nodemon modules.js",
+    "streams": "nodemon streams.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.16.1",
+  "type": "commonjs",
+  "dependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
